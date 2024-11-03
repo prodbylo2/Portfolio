@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "esnext",
+      "lib": ["DOM", "ESNext"],
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true, // This can help avoid certain type-related issues
+      "moduleResolution": "node",
+      "resolveJsonModule": true
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.svelte"
+    ]
+  }
+  
