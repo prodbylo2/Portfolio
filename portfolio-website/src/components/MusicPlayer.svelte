@@ -1,6 +1,7 @@
- <script lang="ts">
+<!-- MusicPlayer.svelte -->
+<script lang="ts">
     import { onMount, onDestroy } from 'svelte';
-    import AudioVisualizer from './MusicVisualizer.svelte'; // Import the visualizer component
+    import AudioVisualizer from './MusicVisualizer.svelte';
 
     let audio: HTMLAudioElement;
     let audioContext: AudioContext;
@@ -9,13 +10,12 @@
     let isPlaying = false;
     let currentSongIndex = 0;
 
-    // Array of song paths
     const songs = [
         '/music/Air.wav',
         '/music/Glitch.wav',
         '/music/House_Final.wav',
         '/music/Space.wav',
-        '/music/Water.wav' // add more as needed
+        '/music/Water.wav'
     ];
 
     const setupAudio = () => {
@@ -85,30 +85,29 @@
         width: 4px;
         background-color: #ff9900;
     }
+    .controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
     button {
-        margin: 10px;
+        margin: 0 10px;
         padding: 8px 16px;
     }
 </style>
 
 <div class="visualizer-container">
     <audio bind:this={audio} src={songs[currentSongIndex]}></audio>
-    <AudioVisualizer {audio} /> <!-- Pass the audio element to the visualizer -->
+    <AudioVisualizer {audio} />
     <div class="bars">
         {#each Array.from({ length: dataArray?.length ?? 0 }) as _, i}
-            <div
-                class="bar"
-                style="height: {dataArray[i] / 2}px"
-            ></div>
+            <div class="bar" style="height: {dataArray[i] / 2}px"></div>
         {/each}
     </div>
 </div>
 
-<div>
+<div class="controls">
     <button on:click={() => changeSong('prev')}>Previous</button>
-    <button on:click={togglePlay}>
-        {isPlaying ? 'Pause' : 'Play'}
-    </button>
+    <button on:click={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
     <button on:click={() => changeSong('next')}>Next</button>
 </div>
-

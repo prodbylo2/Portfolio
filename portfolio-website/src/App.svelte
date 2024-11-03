@@ -1,23 +1,12 @@
-<script>
-  import MusicPlayer from './components/MusicPlayer.svelte'; // Make sure the path is correct
+<!-- App.svelte -->
+<script lang="ts">
+  import MainLayout from './components/MainLayout.svelte';
+  import MusicPlayer from './components/MusicPlayer.svelte';
+
+  const name = "Your Name"; // Replace with your actual name
 </script>
 
-<main>
-  <h1>Music Player</h1>
-  <MusicPlayer /> <!-- Include the MusicPlayer component -->
-</main>
+<MainLayout {name}>
+  <MusicPlayer slot="controls" />
+</MainLayout>
 
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 800px;
-    margin: 0 auto;
-    background: #f0f0f0;
-    border-radius: 8px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-</style>
