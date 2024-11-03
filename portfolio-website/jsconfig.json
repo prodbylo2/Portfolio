@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "baseUrl": ".",
+      "paths": {
+          // Specify any paths if needed, for example:
+          // "src/*": ["./src/*"]
+      },
+      "checkJs": true,
+      "allowSyntheticDefaultImports": true,
+      "jsx": "preserve", // Useful for JSX in components
+      "experimentalDecorators": true, // If using decorators
+      "allowJs": true,
+      "allowArbitraryExtensions": true // Allow arbitrary file extensions
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+      "node_modules"
+  ]
+}
