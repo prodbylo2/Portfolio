@@ -83,7 +83,7 @@
             green: 1.0,
             blue: 1.0,
             threshold: 0.5,
-            strength: 0.5,
+            strength: 0.2,
             radius: 0.8
         };
 
